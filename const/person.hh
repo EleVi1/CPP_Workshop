@@ -6,11 +6,7 @@
 class Person
 {
 public:
-    Person(const std::string& name, unsigned int age)
-    {
-        name_ = name;
-        age_ = age;
-    }
+    Person(const std::string& name, unsigned int age);
     std::string get_name() const;
     unsigned int get_age() const;
 
