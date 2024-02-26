@@ -9,7 +9,10 @@ void ref_swap(int& a, int& b)
 
 void ptr_swap(int* a, int* b)
 {
-    int tmp = *a;
-    *a = *b;
-    *b = tmp;
+    if (a != nullptr && b != nullptr)
+    {
+        int tmp = *a;
+        *a = *b;
+        *b = tmp;
+    }
 }
