@@ -16,12 +16,12 @@ unsigned int Person::get_age() const
     return age_;
 }
 
-void Person::set_name(const std::string name)
+void Person::set_name(const std::string& name)
 {
     name_ = name;
 }
 
-void Person::set_age(const unsigned int age)
+void Person::set_age(unsigned int age)
 {
     age_ = age;
 }
