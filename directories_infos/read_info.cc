@@ -9,6 +9,8 @@ DirectoryInfo read_info(std::istream& input_file)
 
     std::string line;
 
+    std::string end;
+
     std::getline(input_file, line);
     std::istringstream input(line);
 
@@ -28,5 +30,12 @@ DirectoryInfo read_info(std::istream& input_file)
     {
         return DirectoryInfo();
     }
-    return DirectoryInfo(name, size, rights, owner);
+    if (input >> end)
+    {
+        return DirectoryInfo(name, size, rights, owner);
+    }
+    else
+    {
+        return DirectoryInfo();
+    }
 }
