@@ -30,12 +30,9 @@ DirectoryInfo read_info(std::istream& input_file)
     {
         return DirectoryInfo();
     }
-    if (input >> end)
+    if (!(input >> end))
     {
         return DirectoryInfo(name, size, rights, owner);
     }
-    else
-    {
-        return DirectoryInfo();
-    }
+    return DirectoryInfo();
 }
