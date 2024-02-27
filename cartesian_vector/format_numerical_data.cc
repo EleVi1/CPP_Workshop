@@ -1,12 +1,15 @@
-#include <iostream>
-#include <ios>
-#include <iomanip>
-
 #include "format_numerical_data.hh"
 
-FormatNumericalData::FormatNumericalData(const std::string &prefix,
-                                         const std::string &suffix, int precision,
-                                         bool scientific_notation, bool display_plus) {
+#include <iomanip>
+#include <ios>
+#include <iostream>
+
+FormatNumericalData::FormatNumericalData(const std::string& prefix,
+                                         const std::string& suffix,
+                                         int precision,
+                                         bool scientific_notation,
+                                         bool display_plus)
+{
     this->prefix = prefix;
     this->suffix = suffix;
     this->precision = precision;
@@ -14,7 +17,8 @@ FormatNumericalData::FormatNumericalData(const std::string &prefix,
     this->display_plus = display_plus;
 }
 
-std::ostream &FormatNumericalData::formatOs(std::ostream &os) const {
+std::ostream& FormatNumericalData::formatOs(std::ostream& os) const
+{
     if (precision >= 0)
     {
         os << std::setprecision(precision);
