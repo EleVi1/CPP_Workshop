@@ -20,14 +20,18 @@ void Game::play(int bomb_ticks)
         std::cout << players_[0].get_name() << " has exploded.\n";
         return;
     }
-    for (size_t i = 1; i < players_.size(); i++)
+    size_t i = 1;
+    while (true)
     {
-        players_[i - 1].pass_bomb(players_[i]);
-        players_[i].press_bomb();
-        if (players_[i].is_dead())
+        players_[(i - 1) % players_.size()].pass_bomb(
+            players_[i % players_.size()]);
+        players_[i % players_.size()].press_bomb();
+        if (players_[i % players_.size()].is_dead())
         {
-            std::cout << players_[i].get_name() << " has exploded.\n";
+            std::cout << players_[i % players_.size()].get_name()
+                      << " has exploded.\n";
             return;
         }
+        i++;
     }
 }
