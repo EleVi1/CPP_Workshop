@@ -10,7 +10,7 @@ void MyIntContainer::print() const
 {
     for (size_t i = 0; i < current_size_ - 1; ++i)
     {
-        std::cout << elems_[i] << '|';
+        std::cout << elems_[i] << " | ";
     }
     std::cout << elems_[current_size_ - 1];
     std::cout << '\n';
@@ -22,7 +22,7 @@ size_t MyIntContainer::get_len() const
 }
 bool MyIntContainer::add(int elem)
 {
-    if (current_size_ == max_size_)
+    if (current_size_ >= max_size_)
         return false;
     elems_[current_size_] = elem;
     current_size_++;
@@ -31,20 +31,12 @@ bool MyIntContainer::add(int elem)
 
 std::optional<int> MyIntContainer::pop()
 {
-    if (elems_ == nullptr)
+    if (elems_ == nullptr || current_size_ == 0)
     {
         return std::nullopt;
     }
-    int res;
-    if (current_size_ == 0)
-    {
-        res = elems_[current_size_];
-    }
-    else
-    {
-        res = elems_[current_size_ - 1];
-        current_size_--;
-    }
+    int res = elems_[current_size_ - 1];
+    current_size_--;
     return res;
 }
 
