@@ -7,11 +7,15 @@ void Regiment::add_soldier(Soldier& s)
 
 void Regiment::join_by(Regiment& r)
 {
+    if (r.soldiers.empty())
+    {
+        return;
+    }
     for (auto& soldier : soldiers)
     {
         soldiers.emplace_back(soldier);
-        r.soldiers.pop_back();
     }
+    r.soldiers.clear();
 }
 
 size_t Regiment::count() const
