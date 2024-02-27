@@ -11,10 +11,7 @@ void Regiment::join_by(Regiment& r)
     {
         return;
     }
-    for (auto& soldier : soldiers)
-    {
-        soldiers.emplace_back(soldier);
-    }
+    soldiers.insert(this->soldiers.end(), r.soldiers.begin(), r.soldiers.end());
     r.soldiers.clear();
 }
 
