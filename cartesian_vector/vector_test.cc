@@ -2,6 +2,7 @@
 #include <iostream>
 
 #include "formatted_vector.hh"
+#include "state_saver.hh"
 
 double pi()
 {

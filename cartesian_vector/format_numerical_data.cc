@@ -21,7 +21,7 @@ std::ostream &FormatNumericalData::formatOs(std::ostream &os) const {
     }
     if (scientific_notation)
     {
-        os.setf(std::ios_base::scientific, std::ios_base::floatfield);
+        os << std::scientific;
     }
     if (display_plus)
     {
