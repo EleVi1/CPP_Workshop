@@ -6,8 +6,8 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/build)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/build)
 
 add_subdirectory(libyaka)
-add_subdirectory(src)
-
+#add_subdirectory(src)
 
 add_executable(hello_yaka src/main.cc)
-target_link_libraries(cmake libyaka)
+target_link_libraries(hello_yaka PRIVATE libyaka)
+add_dependencies(hello_yaka libyaka)
