@@ -1,5 +1,7 @@
 #include "player.hh"
 
+#include <iostream>
+
 #include "game.hh"
 
 Player::Player(const std::string& name, size_t nb_presses)

@@ -1,5 +1,7 @@
 #include "game.hh"
 
+#include <iostream>
+
 void Game::add_player(const std::string& name, size_t nb_presses)
 {
     players_.push_back(Player(name, nb_presses));

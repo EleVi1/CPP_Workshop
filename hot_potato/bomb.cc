@@ -1,5 +1,7 @@
 #include "bomb.hh"
 
+#include <iostream>
+
 Bomb::Bomb(int ticks)
 {
     if (ticks <= 0)
