@@ -2,6 +2,6 @@
 
 int main()
 {
-    greet_cpp_respos();
+    yaka::greet_cpp_respos();
     return 0;
 }
