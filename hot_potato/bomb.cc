@@ -29,7 +29,7 @@ void Bomb::tick()
     count_++;
 }
 
-bool Bomb::has_exploded()
+bool Bomb::has_exploded() const
 {
     return (count_ >= max_ticks_);
 }
