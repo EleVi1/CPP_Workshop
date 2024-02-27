@@ -1,16 +1,20 @@
+#pragma once
+
+#include <functional>
 #include <iostream>
 #include <string>
 #include <vector>
-#include <functional>
 
-class Soldier {
+class Soldier
+{
 public:
+    Soldier();
     void attack(Soldier& s);
     void print_state() const;
     void scream() const;
 
 protected:
-    int health_points_ = 15;
-    int damage_points_ = 3;
-    std::string scream_ = "No pity for losers!";
+    int damage_points_;
+    int health_points_;
+    std::string scream_;
 };

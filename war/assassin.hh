@@ -1,8 +1,16 @@
+#pragma once
+
 #include "soldier.hh"
 
 class Assassin : public Soldier
 {
-    int health_points_ = 10;
-    int damage_points_ = 9;
-    std::string scream_ = "Out of the shadows!";
+public:
+    Assassin()
+    {
+        this->damage_points_ = 9;
+        this->health_points_ = 10;
+        this->scream_ = "Out of the shadows!";
+    }
+
+private:
 };
