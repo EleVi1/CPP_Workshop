@@ -2,7 +2,11 @@
 
 size_t min_elt_length(const std::vector<std::string>& req)
 {
-    return std::min_element(req.begin(), req.end())->length();
+    return std::min_element(req.begin(), req.end(),
+                            [](const std::string& a, const std::string& b) {
+                                return a.length() < b.length();
+                            })
+        ->length();
 }
 
 size_t max_elt_length(const std::vector<std::string>& req)
