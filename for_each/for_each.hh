@@ -1,8 +1,5 @@
-//
-// Created by elena.villepreux on 2/28/24.
-//
+#pragma once
+#include "for_each.hxx"
 
-#ifndef FOR_EACH_FOR_EACH_HH
-#define FOR_EACH_FOR_EACH_HH
-
-#endif //FOR_EACH_FOR_EACH_HH
+template <class T, class U, class Function>
+void my_foreach(T beg, U end, Function f);
