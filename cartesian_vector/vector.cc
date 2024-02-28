@@ -51,7 +51,7 @@ Vector operator*(const Vector& lhs, double scalar)
 }
 Vector operator*(double scalar, const Vector& rhs)
 {
-    return Vector(scalar * rhs.x_, scalar + rhs.y_);
+    return Vector(scalar * rhs.x_, scalar * rhs.y_);
 }
 double operator*(const Vector& lhs, const Vector& rhs)
 {

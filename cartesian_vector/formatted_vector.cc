@@ -26,6 +26,6 @@ std::ostream& operator<<(std::ostream& os, const FormattedVector& formattedVect)
     StateSaver svg(os);
     formattedVect.formatOs(os);
     os << formattedVect.prefix << formattedVect.x_ << " , " << formattedVect.y_
-       << formattedVect.suffix << '\n';
+       << formattedVect.suffix;
     return os;
 }
