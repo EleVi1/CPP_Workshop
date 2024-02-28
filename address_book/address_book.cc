@@ -55,11 +55,14 @@ bool AddressBook::remove(const std::string& full_name, std::size_t index)
         {
             if (i == index)
             {
-                book_.erase(beg->first);
+                book_.erase(beg);
                 removed = true;
                 break;
             }
-            i++;
+            else
+            {
+                i++;
+            }
         }
     }
     return removed;
