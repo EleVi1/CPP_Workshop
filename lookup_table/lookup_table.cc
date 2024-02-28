@@ -5,11 +5,13 @@
 
 #include "fibo.hh"
 
-void LookupTable::set(int x, long value) {
-    table_.insert({x, value});
+void LookupTable::set(int x, long value)
+{
+    table_.insert({ x, value });
 }
 
-std::optional<long> LookupTable::get(int x) {
+std::optional<long> LookupTable::get(int x)
+{
     auto res = table_.find(x);
     if (res == table_.end())
     {
