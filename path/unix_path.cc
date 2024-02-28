@@ -3,7 +3,7 @@
 std::string UnixPath::to_string() const
 {
     std::ostringstream out;
-    if (path_.size() == 0 || path_[0] != "home")
+    if (path_.size() == 0)
     {
         return "/";
     }

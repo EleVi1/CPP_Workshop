@@ -8,17 +8,16 @@ WindowsPath::WindowsPath(char prefix)
 std::string WindowsPath::to_string() const
 {
     std::ostringstream output;
-    if (path_.size() == 0 || path_[0].length() > 1)
+    if (path_.empty() || path_[0].length() != 1)
     {
         return "";
     }
     size_t i = 0;
     output << path_[0] << ':';
-    for (i = 1; i < path_.size() - 1; ++i)
+    for (i = 1; i < path_.size(); ++i)
     {
         output << "\\" << path_[i];
     }
-    output << "\\" << path_[i];
     if (!this->final_)
     {
         output << "\\";
