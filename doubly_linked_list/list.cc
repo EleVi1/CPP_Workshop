@@ -13,7 +13,7 @@ List::List()
 
 void List::push_front(int i)
 {
-    auto added = std::make_shared<Node>(Node(i));
+    auto added = std::make_shared<Node>(i);
     if (first_ != nullptr)
     {
         first_->set_prev(added);
@@ -30,7 +30,7 @@ void List::push_front(int i)
 
 void List::push_back(int i)
 {
-    auto added = std::make_shared<Node>(Node(i));
+    auto added = std::make_shared<Node>(i);
     if (last_ != nullptr)
     {
         last_->set_next(added);
@@ -85,7 +85,7 @@ void List::print(std::ostream& os) const
         i++;
         tmp = tmp->get_next();
     }
-    os << tmp->get_val() << '\n';
+    os << tmp->get_val();
 }
 
 size_t List::length() const

@@ -31,10 +31,10 @@ void Node::set_next(std::shared_ptr<Node> next)
 
 std::shared_ptr<Node> Node::get_prev() const
 {
-    return std::shared_ptr<Node>(this->prev_);
+    return prev_.lock();
 }
 
 void Node::set_prev(std::shared_ptr<Node> prev)
 {
-    this->prev_ = std::weak_ptr<Node>(prev);
+    this->prev_ = prev;
 }
