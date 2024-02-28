@@ -10,7 +10,7 @@ std::string WindowsPath::to_string() const
     std::ostringstream output;
     if (path_.size() == 0 || path_[0].length() > 1)
     {
-        return nullptr;
+        return "";
     }
     size_t i = 0;
     output << path_[0] << ':';
@@ -33,10 +33,10 @@ WindowsPath& WindowsPath::join(const std::string& tail, bool is_file)
         return *this;
     }
     if (tail.find('"') != std::string::npos
-        || tail.find("?") != std::string::npos
-        || tail.find("|") != std::string::npos
-        || tail.find("*") != std::string::npos
-        || tail.find(":") != std::string::npos)
+        || tail.find('?') != std::string::npos
+        || tail.find('|') != std::string::npos
+        || tail.find('*') != std::string::npos
+        || tail.find(':') != std::string::npos)
     {
         return *this;
     }
