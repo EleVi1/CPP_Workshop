@@ -56,6 +56,7 @@ bool AddressBook::remove(const std::string& full_name, std::size_t index)
             if (i == index)
             {
                 book_.erase(beg->first);
+                removed = true;
                 break;
             }
             i++;
@@ -79,7 +80,7 @@ void AddressBook::remove_all(const std::string& full_name)
 
 std::ostream& operator<<(std::ostream& os, const AddressBook& b)
 {
-    os << b.book_.size() << " contact(s) in the address book\n";
+    os << b.book_.size() << " contact(s) in the address book.\n";
     auto beg = b.book_.begin();
     auto fin = b.book_.end();
     for (; beg != fin; beg++)
