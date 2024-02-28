@@ -1,8 +1,27 @@
-//
-// Created by elena.villepreux on 2/28/24.
-//
+#pragma once
 
-#ifndef ADDRESS_BOOK_ADDRESS_BOOK_HH
-#define ADDRESS_BOOK_ADDRESS_BOOK_HH
+#include <algorithm>
+#include <iostream>
+#include <iterator>
+#include <map>
+#include <optional>
+#include <stdexcept>
+#include <string>
+#include <vector>
 
-#endif //ADDRESS_BOOK_ADDRESS_BOOK_HH
+#include "contact_details.hh"
+
+class AddressBook
+{
+public:
+    bool add(const std::string& full_name, const std::string& email,
+             const std::string& number);
+    std::vector<ContactDetails> find(const std::string& full_name);
+    std::size_t count(const std::string& full_name);
+    bool remove(const std::string& full_name, std::size_t index);
+    void remove_all(const std::string& full_name);
+    friend std::ostream& operator<<(std::ostream& os, const AddressBook& b);
+
+private:
+    std::multimap<std::string, ContactDetails> book_;
+};

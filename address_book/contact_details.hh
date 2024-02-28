@@ -1,8 +1,29 @@
-//
-// Created by elena.villepreux on 2/28/24.
-//
+#pragma once
 
-#ifndef ADDRESS_BOOK_CONTACT_DETAILS_HH
-#define ADDRESS_BOOK_CONTACT_DETAILS_HH
+#include <algorithm>
+#include <iostream>
+#include <iterator>
+#include <map>
+#include <optional>
+#include <stdexcept>
+#include <string>
+#include <vector>
 
-#endif //ADDRESS_BOOK_CONTACT_DETAILS_HH
+struct ContactDetails
+{
+public:
+    static std::optional<ContactDetails>
+    makeDetails(const std::string& telephone_number,
+                const std::string& personal_email);
+    friend std::ostream& operator<<(std::ostream& os, const ContactDetails& c);
+
+private:
+    ContactDetails(const std::string& telephone_number,
+                   const std::string& personal_email)
+    {
+        number_ = telephone_number;
+        email_ = personal_email;
+    }
+    std::string number_;
+    std::string email_;
+};
