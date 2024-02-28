@@ -76,7 +76,7 @@ void AddressBook::remove_all(const std::string& full_name)
     {
         if (beg->first == full_name)
         {
-            book_.erase(beg->first);
+            book_.erase(beg);
         }
     }
 }
