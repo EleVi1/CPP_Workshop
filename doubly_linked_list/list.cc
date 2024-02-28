@@ -19,7 +19,6 @@ void List::push_front(int i)
         first_->set_prev(added);
     }
     added->set_next(first_);
-    added->set_prev(nullptr);
     first_ = added;
     if (nb_elts_ == 0)
     {
@@ -36,7 +35,6 @@ void List::push_back(int i)
         last_->set_next(added);
     }
     added->set_prev(last_);
-    added->set_next(nullptr);
     last_ = added;
     if (nb_elts_ == 0)
     {
@@ -53,7 +51,6 @@ std::optional<int> List::pop_back()
     }
     int val = this->last_->get_val();
     this->last_ = last_->get_prev();
-    this->last_->set_next(nullptr);
     nb_elts_--;
     return val;
 }
@@ -66,7 +63,6 @@ std::optional<int> List::pop_front()
     }
     int val = this->first_->get_val();
     this->first_ = first_->get_next();
-    this->first_->set_prev(nullptr);
     nb_elts_--;
     return val;
 }
