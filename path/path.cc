@@ -1,8 +1,8 @@
+#include "path.hh"
+
+#include <array>
 #include <iostream>
 #include <sstream>
-#include <array>
-
-#include "path.hh"
 
 Path& Path::join(const std::string& tail, bool is_file)
 {

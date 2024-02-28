@@ -1,0 +1,8 @@
+//
+// Created by elena.villepreux on 2/28/24.
+//
+
+#ifndef ADDRESS_BOOK_CONTACT_DETAILS_HH
+#define ADDRESS_BOOK_CONTACT_DETAILS_HH
+
+#endif //ADDRESS_BOOK_CONTACT_DETAILS_HH

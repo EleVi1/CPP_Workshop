@@ -1,6 +1,7 @@
 #include "windows_path.hh"
 
-WindowsPath::WindowsPath(char prefix) {
+WindowsPath::WindowsPath(char prefix)
+{
     path_.emplace_back(std::string(1, prefix));
 }
 
@@ -13,7 +14,8 @@ std::string WindowsPath::to_string() const
     }
     size_t i = 0;
     output << path_[0] << ':';
-    for (i = 1; i < path_.size() - 1; ++i) {
+    for (i = 1; i < path_.size() - 1; ++i)
+    {
         output << "\\" << path_[i];
     }
     output << "\\" << path_[i];
@@ -31,10 +33,10 @@ WindowsPath& WindowsPath::join(const std::string& tail, bool is_file)
         return *this;
     }
     if (tail.find('"') != std::string::npos
-    || tail.find("?") != std::string::npos
-    || tail.find("|") != std::string::npos
-    || tail.find("*") != std::string::npos
-       || tail.find(":") != std::string::npos)
+        || tail.find("?") != std::string::npos
+        || tail.find("|") != std::string::npos
+        || tail.find("*") != std::string::npos
+        || tail.find(":") != std::string::npos)
     {
         return *this;
     }

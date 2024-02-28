@@ -8,7 +8,8 @@ std::string UnixPath::to_string() const
         return nullptr;
     }
     size_t i = 0;
-    for (i = 0; i < path_.size() - 1; ++i) {
+    for (i = 0; i < path_.size() - 1; ++i)
+    {
         out << "/" << path_[i];
     }
     out << "/" << path_[i];
