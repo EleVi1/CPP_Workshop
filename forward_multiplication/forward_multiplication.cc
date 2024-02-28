@@ -1,3 +1,5 @@
-//
-// Created by elena.villepreux on 2/28/24.
-//
+#include "forward_multiplication.hh"
+
+#include <iostream>
+
+outer_lambda_type mult_by = [](int a) { return [a](int b) { return a * b; }; };
