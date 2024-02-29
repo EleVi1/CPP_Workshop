@@ -5,21 +5,18 @@ Player::Player(const std::string& name, unsigned int age, int guess)
     , age_(age)
     , guess_(guess)
 {
-    try
+    if (name_.empty())
     {
-        if (name_.empty())
-        {
-            throw InvalidArgumentException("Name can't be empty.");
-        }
-        if (age > 150)
-        {
-            throw InvalidArgumentException("Sorry gramp, too old to play.");
-        }
+        throw InvalidArgumentException("Name can't be empty.");
     }
-    catch (const std::exception& e)
+    if (age > 150)
     {
-        std::cerr << e.what() << '\n';
+        throw InvalidArgumentException("Sorry gramp, too old to play.");
     }
+    //    catch (const std::exception& e)
+    //    {
+    //        std::cerr << e.what() << '\n';
+    //    }
 }
 
 int Player::get_guess() const

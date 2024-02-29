@@ -8,24 +8,23 @@ Game::Game(int secret)
 
 void Game::play(const Player& p1, const Player& p2) const
 {
-    try
+    if (&p1 == &p2)
     {
-        if (&p1 == &p2)
-        {
-            throw InvalidArgumentException("Stop playing by yourself!");
-        }
-        auto d1 = std::abs(p1.get_guess() - secret_);
-        auto d2 = std::abs(p2.get_guess() - secret_);
+        throw InvalidArgumentException("Stop playing by yourself!");
+        // std::cerr << e.what() << '\n';
+    }
+    auto d1 = std::abs(p1.get_guess() - secret_);
+    auto d2 = std::abs(p2.get_guess() - secret_);
 
-        if (d1 > d2)
-            std::cout << p1 << " wins!" << std::endl;
-        else if (d1 < d2)
-            std::cout << p2 << " wins!" << std::endl;
-        else
-            std::cout << "Draw!" << std::endl;
-    }
-    catch (const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
+    if (d1 > d2)
+        std::cout << p1 << " wins!" << std::endl;
+    else if (d1 < d2)
+        std::cout << p2 << " wins!" << std::endl;
+    else
+        std::cout << "Draw!" << std::endl;
+    //}
+    //    catch (const std::exception& e)
+    //    {
+    //        std::cerr << e.what() << '\n';
+    //    }
 }
