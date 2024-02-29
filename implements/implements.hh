@@ -1,3 +1,4 @@
+#pragma once
 
 template <typename U, typename V = U>
 concept impl_basic_op = requires(U u, V v)
