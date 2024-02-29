@@ -49,7 +49,7 @@ void ComputeVisitor::visit(const tree::DivNode& e)
     int denom = value_;
     if (denom == 0)
     {
-        throw std::overflow_error("Division by zero exception");
+        throw std::overflow_error("Divide by zero exception");
     }
     value_ = num / denom;
 }
