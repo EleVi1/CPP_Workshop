@@ -14,30 +14,30 @@ Car Builder::get_car() const
 
 std::unique_ptr<Wheel> JeepBuilder::get_wheel() const
 {
-    return std::move(std::make_unique<Wheel>(Wheel(22)));
+    return std::make_unique<Wheel>(Wheel(22));
 }
 
 std::unique_ptr<Engine> JeepBuilder::get_engine() const
 {
-    return std::move(std::make_unique<Engine>(Engine(400)));
+    return std::make_unique<Engine>(Engine(400));
 }
 
 std::unique_ptr<Body> JeepBuilder::get_body() const
 {
-    return std::move(std::make_unique<Body>(Body("SUV")));
+    return std::make_unique<Body>(Body("SUV"));
 }
 
 std::unique_ptr<Wheel> NissanBuilder::get_wheel() const
 {
-    return std::move(std::make_unique<Wheel>(Wheel(16)));
+    return std::make_unique<Wheel>(Wheel(16));
 }
 
 std::unique_ptr<Engine> NissanBuilder::get_engine() const
 {
-    return std::move(std::make_unique<Engine>(Engine(85)));
+    return std::make_unique<Engine>(Engine(85));
 }
 
 std::unique_ptr<Body> NissanBuilder::get_body() const
 {
-    return std::move(std::make_unique<Body>(Body("hatchback")));
+    return std::make_unique<Body>(Body("hatchback"));
 }
