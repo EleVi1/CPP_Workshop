@@ -38,9 +38,10 @@ NFT Person::remove_nft(const std::string& name)
         {
             ret = std::move(*beg);
             nfts_.erase(beg);
+            return ret;
         }
     }
-    return ret;
+    return create_empty_nft();
 }
 
 void Person::add_money(uint money)
