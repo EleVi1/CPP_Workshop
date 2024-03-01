@@ -25,6 +25,11 @@ std::vector<std::vector<std::string>> parse_csv(const std::string& file_name)
                 elements++;
                 input.push_back(word);
             }
+            if (!lineStream && word.empty())
+            {
+                elements++;
+                input.push_back("");
+            }
         }
         else
         {
@@ -33,6 +38,11 @@ std::vector<std::vector<std::string>> parse_csv(const std::string& file_name)
             {
                 count++;
                 input.push_back(word);
+            }
+            if (!lineStream && word.empty())
+            {
+                count++;
+                input.push_back("");
             }
             if (count != elements || std::getline(lineStream, word, ','))
             {
