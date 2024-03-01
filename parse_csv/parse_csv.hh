@@ -1,8 +1,10 @@
-//
-// Created by elena.villepreux on 2/28/24.
-//
+#pragma once
 
-#ifndef PARSE_CSV_PARSE_CSV_HH
-#define PARSE_CSV_PARSE_CSV_HH
+#include <fstream>
+#include <iomanip>
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <vector>
 
-#endif //PARSE_CSV_PARSE_CSV_HH
+std::vector<std::vector<std::string>> parse_csv(const std::string& file_name);
