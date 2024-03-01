@@ -38,7 +38,7 @@ inline SafeInt operator+(SafeInt lhs, SafeInt rhs)
 {
     if (!lhs.has_value() || !rhs.has_value())
     {
-        throw std::bad_optional_access();
+        return SafeInt();
     }
     int val_res = 0;
     if (__builtin_add_overflow(lhs.value(), rhs.value(), &val_res))
@@ -52,7 +52,7 @@ inline SafeInt operator-(SafeInt lhs, SafeInt rhs)
 {
     if (!lhs.has_value() || !rhs.has_value())
     {
-        throw std::bad_optional_access();
+        return SafeInt();
     }
     int val_res = 0;
     if (__builtin_sub_overflow(lhs.value(), rhs.value(), &val_res))
@@ -66,7 +66,7 @@ inline SafeInt operator*(SafeInt lhs, SafeInt rhs)
 {
     if (!lhs.has_value() || !rhs.has_value())
     {
-        throw std::bad_optional_access();
+        return SafeInt();
     }
     int val_res = 0;
     if (__builtin_mul_overflow(lhs.value(), rhs.value(), &val_res))
@@ -80,7 +80,7 @@ inline SafeInt operator/(SafeInt lhs, SafeInt rhs)
 {
     if (!lhs.has_value() || !rhs.has_value())
     {
-        throw std::bad_optional_access();
+        return SafeInt();
     }
     if (rhs.value() == 0
         || (rhs.value() == -1
